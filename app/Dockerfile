@@ -1,11 +1,13 @@
-FROM python:3.9-alpine
+FROM node:14
 
-WORKDIR /app
+WORKDIR /usr/src/app
 
-COPY app.py .
+COPY package*.json ./
 
-RUN pip install flask
+RUN npm install
+
+COPY . .
 
 EXPOSE 8090
 
-CMD ["flask", "run", "--host=0.0.0.0", "--port=8090"]
+CMD ["npm", "start"]

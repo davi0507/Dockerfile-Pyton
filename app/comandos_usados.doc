@@ -1,0 +1,4 @@
+comandos usados:
+
+docker build -t meu-app-flask .
+docker run -p 8090:8090 meu-app-flask 
